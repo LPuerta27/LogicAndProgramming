@@ -10,10 +10,10 @@ namespace Ejercicio_num24
               Tomar los meses con un estándar de 30 días.Hacer el programa con métodos*/
 
             //Datos de entrada: numDias
-            //Datos de proceso: numDias, meses, años
-            //Datos de salida: dias, meses, años
+            //Datos de proceso: numDias, meses, anios
+            //Datos de salida: numDias, dias, meses, años, anios
 
-            decimal numDias, meses, anios, dias;
+            decimal numDias, meses, anios, dias, diasRestantes;
 
             PedirDatos(out numDias);
             Calcular(numDias, out anios, out meses, out dias);
@@ -33,18 +33,20 @@ namespace Ejercicio_num24
             static void Calcular(  decimal numDias, out decimal meses, out decimal anios, out decimal dias)
 
             {
+                decimal diasRestantes;
+
                 anios = (numDias / 365);
-                meses = (anios * 12);
-                dias = (meses * 30);
-               
+                diasRestantes = (numDias % 365);
+                meses = (diasRestantes / 30);
+                dias = (diasRestantes % 30);
 
             }
 
             static void MostrarResultado (decimal numDias,  decimal meses,  decimal anios,decimal dias)
 
             {
-                Console.WriteLine($"Tiene {anios.ToString(("0.00"))} años  ");
-                Console.WriteLine($"Tiene {meses.ToString(("0.00"))} meses ");
+                Console.WriteLine($"Tiene {anios.ToString(("0.00"))} años");
+                Console.WriteLine($"Tiene {meses.ToString(("0.00"))} meses");
                 Console.WriteLine($"Tiene {dias.ToString(("0.00"))} días");
             }
         }
