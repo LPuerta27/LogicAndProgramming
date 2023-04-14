@@ -13,7 +13,8 @@ namespace Ejercicio_num24
             //Datos de proceso: numDias, meses, anios
             //Datos de salida: numDias, dias, meses, años, anios
 
-            decimal numDias, meses, anios, dias, diasRestantes;
+            decimal meses, anios, dias, diasRestantes;
+            int numDias;
 
             PedirDatos(out numDias);
             Calcular(numDias, out anios, out meses, out dias);
@@ -21,7 +22,7 @@ namespace Ejercicio_num24
         
 
 
-            static void PedirDatos(out decimal numDias)
+            static void PedirDatos(out  int numDias)
             {
                 Console.WriteLine("-----------------------------------");
                 Console.WriteLine("Por favor ingrese el número de días");
@@ -30,11 +31,11 @@ namespace Ejercicio_num24
                 numDias = Convert.ToInt32(Console.ReadLine());   
             }
 
-            static void Calcular(  decimal numDias, out decimal meses, out decimal anios, out decimal dias)
+            static void Calcular(  int numDias, out decimal meses, out decimal anios, out decimal dias)
 
             {
                 decimal diasRestantes;
-
+                
                 anios = (numDias / 365);
                 diasRestantes = (numDias % 365);
                 meses = (diasRestantes / 30);
@@ -42,12 +43,12 @@ namespace Ejercicio_num24
 
             }
 
-            static void MostrarResultado (decimal numDias,  decimal meses,  decimal anios,decimal dias)
+            static void MostrarResultado (int numDias,  decimal meses,  decimal anios,decimal dias)
 
             {
-                Console.WriteLine($"Tiene {anios.ToString(("0.00"))} años");
-                Console.WriteLine($"Tiene {meses.ToString(("0.00"))} meses");
-                Console.WriteLine($"Tiene {dias.ToString(("0.00"))} días");
+                Console.WriteLine($"Tiene {anios.ToString(("0"))} años");
+                Console.WriteLine($"Tiene {meses.ToString(("0"))} meses");
+                Console.WriteLine($"Tiene {dias.ToString(("0"))} días");
             }
         }
     }
