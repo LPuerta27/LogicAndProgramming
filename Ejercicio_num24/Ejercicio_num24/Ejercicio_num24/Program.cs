@@ -13,10 +13,12 @@ namespace Ejercicio_num24
             //Datos de proceso: numDias, meses, años
             //Datos de salida: dias, meses, años
 
-            decimal numDias, meses, anios;
+            decimal numDias, meses, anios, dias;
 
             PedirDatos(out numDias);
-            Calcular(numDias, out anios, out meses );
+            Calcular(numDias, out anios, out meses, out dias);
+            MostrarResultado(numDias, anios, meses, dias );
+        
 
 
             static void PedirDatos(out decimal numDias)
@@ -28,22 +30,23 @@ namespace Ejercicio_num24
                 numDias = Convert.ToInt32(Console.ReadLine());   
             }
 
-            static void Calcular(  decimal numDias, out decimal meses, out decimal anios)
+            static void Calcular(  decimal numDias, out decimal meses, out decimal anios, out decimal dias)
 
             {
                 anios = (numDias / 365);
-                Console.WriteLine($"Tiene {anios} años  ");
-
                 meses = (anios * 12);
-                Console.WriteLine($"Tiene {meses} meses ");
-
-                numDias = (meses * 30);
-                Console.WriteLine($"Tiene {numDias}días");
+                dias = (meses * 30);
+               
 
             }
 
+            static void MostrarResultado (decimal numDias,  decimal meses,  decimal anios,decimal dias)
 
-
+            {
+                Console.WriteLine($"Tiene {anios.ToString(("0.00"))} años  ");
+                Console.WriteLine($"Tiene {meses.ToString(("0.00"))} meses ");
+                Console.WriteLine($"Tiene {dias.ToString(("0.00"))} días");
+            }
         }
     }
 }
