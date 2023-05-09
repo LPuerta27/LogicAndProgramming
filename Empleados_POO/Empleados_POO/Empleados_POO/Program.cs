@@ -89,7 +89,7 @@ namespace Empleados_POO
             Console.Write("Ingrese las ventas del mes: ");
             sales = Convert.ToDecimal(Console.ReadLine());
 
-            Console.Write("Ingrese el porcentage de la comisión: ");
+            Console.Write("Ingrese el porcentaje de la comisión: ");
             commissionPercentage = Convert.ToDouble(Console.ReadLine());
 
             Console.Write("\n");
