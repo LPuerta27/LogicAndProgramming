@@ -20,7 +20,8 @@ namespace Empleados_POO
             String firstName, lastName;
             DateTime birthDate, hiringDate;
             bool IsActive;
-            decimal salary;
+            decimal salary, sales;
+            double commissionPercentage;
 
 
             //Instancio la clase SalaryEmployee (Doy vida a la clase)
@@ -66,6 +67,47 @@ namespace Empleados_POO
             salaryEmployee.Salary= salary;
 
             salaryEmployee.ShowEmployeeInformation();
+
+            Console.Write("Ingrese su ID: ");
+            id = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Ingrese su nombre: ");
+            firstName = Console.ReadLine();
+
+            Console.Write("Ingrese sus apellidos: ");
+            lastName = Console.ReadLine();
+
+            Console.Write("Ingrese su fecha de cumpleaños: ");
+            birthDate = Convert.ToDateTime(Console.ReadLine());
+
+            Console.Write("Ingrese su fecha de contratación: ");
+            hiringDate = Convert.ToDateTime(Console.ReadLine());
+
+            Console.Write("¿Es un empleado activo?: ");
+            IsActive = Convert.ToBoolean(Console.ReadLine());
+
+            Console.Write("Ingrese las ventas del mes: ");
+            sales = Convert.ToDecimal(Console.ReadLine());
+
+            Console.Write("Ingrese el porcentage de la comisión: ");
+            commissionPercentage = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("\n");
+
+            //Instancio la clase CommissionEmployee (Doy vida a la clase)
+            CommissionEmployee commissionEmployee = new CommissionEmployee()
+            {
+                Id = id,
+                FirstName = firstName,
+                LastName = lastName,
+                BirthDate = birthDate,
+                HiringDate = hiringDate,
+                IsActive = IsActive,
+                Sales = sales,
+                CommissionPercentage = commissionPercentage,
+
+            };
+            commissionEmployee.ShowEmployeeInformation();
         }
     }
 }

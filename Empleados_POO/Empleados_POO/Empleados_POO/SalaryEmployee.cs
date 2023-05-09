@@ -22,7 +22,7 @@ namespace Empleados_POO
                 "Fecha de nacimiento: {3}\n" +
                 "Fecha de contratación: {4}\n" +
                 "Está activo: {5}\n" +
-                "Salario: {6}\n", Id, FirstName, LastName,BirthDate, HiringDate, IsActive, Salary ));
+                "Salario: {6:C2}\n", Id, FirstName, LastName,BirthDate, HiringDate, IsActive, Salary ));
         }
     }
 }
