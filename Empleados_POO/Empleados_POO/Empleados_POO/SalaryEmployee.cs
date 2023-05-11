@@ -15,7 +15,7 @@ namespace Empleados_POO
 
         public void ShowEmployeeInformation()
         {
-            Console.WriteLine(String.Format("Empleado Asalariado:\n" +
+            Console.WriteLine(String.Format("Empleado Asalariado\n" +
                 "ID: {0}\n" +
                 "Nombres: {1}\n" +
                 "Apellidos: {2}\n" +

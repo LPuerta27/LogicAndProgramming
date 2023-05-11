@@ -18,7 +18,7 @@ namespace Empleados_POO
 
         public void ShowEmployeeInformation()
         {
-            Console.WriteLine(String.Format("Empleado Por Comisión:\n" +
+            Console.WriteLine(String.Format("Empleado Por Comisión\n" +
                 "ID: {0}\n" +
                 "Nombres: {1}\n" +
                 "Apellidos: {2}\n" +
@@ -26,7 +26,7 @@ namespace Empleados_POO
                 "Fecha de contratación: {4}\n" +
                 "Está activo: {5}\n" +
                 "Ventas del mes: {6:C2} \n" +
-                "Porcentaje de comisión: {7:P2}" +
+                "Porcentaje de comisión: {7:P2}\n" +
                 "Ingresos comisión: {8:C2}\n",
                 Id, 
                 FirstName, 

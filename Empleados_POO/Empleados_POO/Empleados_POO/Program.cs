@@ -20,36 +20,18 @@ namespace Empleados_POO
             String firstName, lastName;
             DateTime birthDate, hiringDate;
             bool IsActive;
-            decimal salary, sales;
-            double commissionPercentage;
-
+            decimal salary, sales, hourValue;
+            double commissionPercentage, hours;
 
             //Instancio la clase SalaryEmployee (Doy vida a la clase)
             SalaryEmployee salaryEmployee = new SalaryEmployee();
-
-            SalaryEmployee employee = new SalaryEmployee();
 
             Console.WriteLine("*************");
             Console.WriteLine("**EMPLEADOS**");
             Console.WriteLine("*************\n");
 
-            Console.Write("Ingrese su ID: ");
-            id = Convert.ToInt32(Console.ReadLine());
-
-            Console.Write("Ingrese su nombre: ");
-            firstName= Console.ReadLine();
-
-            Console.Write("Ingrese sus apellidos: ");
-            lastName = Console.ReadLine();
-
-            Console.Write("Ingrese su fecha de cumpleaños: ");
-            birthDate = Convert.ToDateTime(Console.ReadLine());
-
-            Console.Write("Ingrese su fecha de contratación: ");
-            hiringDate = Convert.ToDateTime(Console.ReadLine());
-
-            Console.Write("¿Es un empleado activo?: ");
-            IsActive = Convert.ToBoolean(Console.ReadLine());
+            Console.WriteLine("Empleado Asalariado\n");
+            AskData(out id, out firstName, out lastName, out birthDate, out hiringDate, out IsActive);
 
             Console.Write("Ingrese su salario: ");
             salary = Convert.ToDecimal(Console.ReadLine());
@@ -64,27 +46,12 @@ namespace Empleados_POO
             salaryEmployee.BirthDate = birthDate;
             salaryEmployee.HiringDate = hiringDate;
             salaryEmployee.IsActive = IsActive;
-            salaryEmployee.Salary= salary;
+            salaryEmployee.Salary = salary;
 
             salaryEmployee.ShowEmployeeInformation();
 
-            Console.Write("Ingrese su ID: ");
-            id = Convert.ToInt32(Console.ReadLine());
-
-            Console.Write("Ingrese su nombre: ");
-            firstName = Console.ReadLine();
-
-            Console.Write("Ingrese sus apellidos: ");
-            lastName = Console.ReadLine();
-
-            Console.Write("Ingrese su fecha de cumpleaños: ");
-            birthDate = Convert.ToDateTime(Console.ReadLine());
-
-            Console.Write("Ingrese su fecha de contratación: ");
-            hiringDate = Convert.ToDateTime(Console.ReadLine());
-
-            Console.Write("¿Es un empleado activo?: ");
-            IsActive = Convert.ToBoolean(Console.ReadLine());
+            Console.WriteLine("Empleado Por Comisión\n");
+            AskData(out id, out firstName, out lastName, out birthDate, out hiringDate, out IsActive);
 
             Console.Write("Ingrese las ventas del mes: ");
             sales = Convert.ToDecimal(Console.ReadLine());
@@ -105,9 +72,58 @@ namespace Empleados_POO
                 IsActive = IsActive,
                 Sales = sales,
                 CommissionPercentage = commissionPercentage,
+            };
+
+            commissionEmployee.ShowEmployeeInformation();
+
+            //HourlyEmployee
+
+            Console.WriteLine("Empleado Por Horas\n");
+            AskData(out id, out firstName, out lastName, out birthDate, out hiringDate, out IsActive);
+
+            Console.Write("Ingrese las horas trabajadas: ");
+            hours = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Ingrese el valor de la hora: ");
+            hourValue = Convert.ToDecimal(Console.ReadLine());
+
+            Console.Write("\n");
+
+            //Instancio la clase HourlyEmployee (Doy vida a la clase)
+            HourlyEmployee hourlyEmployee = new HourlyEmployee()
+            {
+                Id = id,
+                FirstName = firstName,
+                LastName = lastName,
+                BirthDate = birthDate,
+                HiringDate = hiringDate,
+                IsActive = IsActive,
+                Hours = hours,
+                HourValue = hourValue,
 
             };
-            commissionEmployee.ShowEmployeeInformation();
+            hourlyEmployee.ShowEmployeeInformation();
+        }
+
+        public static void AskData(out int id, out string firstName, out string lastName, out DateTime birthDate,out DateTime hiringDate,out bool isActive)
+        {
+            Console.Write("Ingrese su ID: ");
+            id = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Ingrese su nombre: ");
+            firstName = Console.ReadLine();
+
+            Console.Write("Ingrese sus apellidos: ");
+            lastName = Console.ReadLine();
+
+            Console.Write("Ingrese su fecha de cumpleaños: ");
+            birthDate = Convert.ToDateTime(Console.ReadLine());
+
+            Console.Write("Ingrese su fecha de contratación: ");
+            hiringDate = Convert.ToDateTime(Console.ReadLine());
+
+            Console.Write("¿Es un empleado activo?: ");
+            isActive = Convert.ToBoolean(Console.ReadLine());
         }
     }
 }
